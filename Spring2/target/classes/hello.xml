@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="one" class="com.pack.Example" scope="prototype">
+   <property name="message" value="HelloWorld"/>
+   </bean>
+
+    <bean id="addr" class="com.pack.Address">
+    <property name="city" value="chennai"/>
+    <property name="state" value="Tamilnadu"/>
+     <property name="zipcode" value="600119"/>
+   
+    </bean>
+    <bean id="person" class="com.pack.Person">
+      <property name="pid" value="200"/>
+      <property name="pname" value="Raj"/>
+      <property name="age" value="23"/>
+      <property name="address" ref="addr"/>
+    
+    </bean>
+    
+    <bean id="b1" class="com.pack.Bean1">
+    <property name="message1" value="Hello World"/>
+      <property name="message2" value="Namasthe World"/>
+    
+    </bean>
+    
+    <bean id="b2" class="com.pack.Bean2" parent="b1">
+    <property name="message1" value="GoodBye World"/>
+     <property name="message3" value="End World"/>
+    
+    </bean>
+    
+      <bean id="Collection" class="com.pack.ExampleCollection" >
+    <property name="addrList">
+            <list>
+             <value>India</value>
+             <value>UK</value>
+             <value>China</value>
+              <value>UK</value>
+            </list>
+    </property> 
+     <property name="addrSet">
+     <set>
+     <value>India</value>
+       <value>UK</value>
+       <value>China</value>
+       <value>UK</value>
+     </set>
+     
+     </property>
+     <property name="addrMap">
+     <map>
+     <entry key="1" value="India"/>
+        <entry key="2" value="UK"/>
+           <entry key="3" value="US"/>
+              <entry key="4" value="China"/>
+                 <entry key="5" value="Russia"/>
+     </map>
+     
+     </property>
+     
+     <property name="addrProp">
+     <props>
+     <prop key="one">India</prop>
+      <prop key="two">UK</prop>
+       <prop key="three">US</prop>
+        <prop key="four">China</prop>
+     
+     </props>
+     </property>
+    </bean>
+    
+    
+</beans>

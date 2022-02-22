@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+ <bean id="mgr" class="com.pack.Manager" autowire-candidate="false" >
+    <property name="mgr_id" value="300"/>
+     <property name="mgr_name" value="Somu"/>
+      <property name="dept" value="HR"/>
+    </bean>
+    
+    <bean id="mgr1" class="com.pack.Manager" >
+    <property name="mgr_id" value="301"/>
+     <property name="mgr_name" value="Bhargav"/>
+      <property name="dept" value="Sales"/>
+    </bean>
+    
+    <bean id="mgr2" class="com.pack.Manager" primary="true">
+    <property name="mgr_id" value="302"/>
+     <property name="mgr_name" value="Balaji"/>
+      <property name="dept" value="Admin"/>
+    </bean>
+    
+
+
+ <bean id="emp" class="com.pack.Employee" autowire="byType">
+   <property name="empid" value="100"/>
+     <property name="name" value="Raja"/>
+     </bean>
+
+</beans>
+
